@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:gui": "./node_modules/.bin/electron .",
-    "build:win": "electron-packager . --platform=win32 out=dist/"
+    "build:win": "./node_moduels/.bin/electron-packager . --platform=win32 out=dist/"
   },
   "keywords": [
     "electron",
@@ -27,5 +27,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/perfectstrong/CPExternalizer-GUI.git"
+  },
+  "dependencies": {
+    "cpexternalizer": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.7.11",
+    "electron-packager": "^10.1.2"
   }
 }
