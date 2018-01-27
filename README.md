@@ -12,7 +12,7 @@ _**Requirements**_:
 git clone https://github.com/perfectstrong/CPExternalizer-GUI
 cd CPExternlizer-GUI
 npm install
-npm run start:gui # to run GUI, see the Graphical User Interface
+npm run start
 ````
 
 ## Graphical User Interface

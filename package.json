@@ -4,8 +4,8 @@
   "description": "Electronized version of CPExternalizer",
   "main": "index.js",
   "scripts": {
-    "start:gui": "./node_modules/.bin/electron .",
-    "build:win": "./node_moduels/.bin/electron-packager . --platform=win32 out=dist/"
+    "start": "./node_modules/.bin/electron .",
+    "build:win": "./node_modules/.bin/electron-packager ./ CPExternalizer --platform=win32 --overwrite --out=dist/"
   },
   "keywords": [
     "electron",
