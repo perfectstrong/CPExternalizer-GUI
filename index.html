@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CPExternalizer</title>
+  <link rel="stylesheet" href="./css/extra.css" />
+  <link rel="stylesheet" href="./css/photon.css" />
+  <link rel="stylesheet" href="./css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="window">
+    <div class="window-content">
+
+      <!-- DirExtract -->
+      <section id="dirextract">
+        <h2>Folder slimmer</h2>
+        <p>Slimming exported folders of Adobe Captivate.</p>
+        <div class="block">
+          <!-- Directory chooser -->
+          <p>Exported folders.</p>
+          <div class="chooser" id="src">
+            <input type="file" multiple webkitdirectory/>
+            <div class="chosen">
+              <!-- Currently chosen directories -->
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <p>Where to save output.</p>
+          <!-- Directory chooser -->
+          <div class="chooser" id="outdir">
+            <input type="file" webkitdirectory/>
+            <div class="chosen">
+              <!-- Currently chosen directory -->
+            </div>
+          </div>
+        </div>
+        <div class="block wrapper-logger">
+          <div>
+            <p>Log</p>
+            <button class="btn btn-default" id="clear">Clear</button>
+            <button class="btn btn-default" id="show">Show</button>
+            <button class="btn btn-default" id="hide">Hide</button>
+          </div>
+          <div class="logger">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-large" id="btn-dirextract">Slim</button>
+          <span class="" id="progress"></span>
+          <span class="info" id="info"></span>
+        </div>
+      </section>
+
+
+      <!-- Soundfix -->
+      <section id="soundfix">
+        <h2>Sound fixing</h2>
+        <p>Fixing missing audio source in project initiator. Use it when the common loader does not find out the audio files.</p>
+        <div class="block">
+          <!-- File chooser -->
+          <p>Initiators. Only accept js file. All other types are ignored.</p>
+          <div class="chooser" id="src">
+            <input type="file" accept=".js" multiple/>
+            <div class="chosen">
+              <!-- Currently chosen files -->
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <p>Unit loader source path. Usually, the path from unit loader to module should be "down-straight", which means no
+            climb up other directory.</p>
+          <!-- Directory chooser -->
+          <div class="chooser" id="ulpath">
+            <input type="file" webkitdirectory/>
+            <div class="chosen">
+              <!-- Currently chosen directory -->
+            </div>
+          </div>
+        </div>
+        <div class="block wrapper-logger">
+          <div>
+            <p>Log</p>
+            <button class="btn btn-default" id="clear">Clear</button>
+            <button class="btn btn-default" id="show">Show</button>
+            <button class="btn btn-default" id="hide">Hide</button>
+          </div>
+          <div class="logger">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-large" id="btn-soundfix">Fix</button>
+          <span class="" id="progress"></span>
+          <span class="info" id="info"></span>
+        </div>
+      </section>
+
+      <!-- Extract -->
+      <section id="extract">
+        <h2>Project initiator</h2>
+        <p>Extract the iniator of module.</p>
+        <div class="block">
+          <!-- File chooser -->
+          <p>Path(s) to CPM.js.</p>
+          <div class="chooser" id="src">
+            <input type="file" accept=".js" multiple/>
+            <div class="chosen">
+              <!-- Currently chosen files -->
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <!-- Directory chooser -->
+          <p>Where to save the output.</p>
+          <div class="chooser" id="outdir">
+            <input type="file" webkitdirectory/>
+            <div class="chosen">
+              <!-- Currently chosen directory -->
+            </div>
+          </div>
+        </div>
+        <div class="block wrapper-logger">
+          <div>
+            <p>Log</p>
+            <button class="btn btn-default" id="clear">Clear</button>
+            <button class="btn btn-default" id="show">Show</button>
+            <button class="btn btn-default" id="hide">Hide</button>
+          </div>
+          <div class="logger">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-large" id="btn-extract">Extract</button>
+          <span class="" id="progress"></span>
+          <span class="info" id="info"></span>
+        </div>
+      </section>
+
+      <!-- XcpExtract -->
+      <section id="xcpextract">
+        <h2>Extra components</h2>
+        <p>Extract the components still uncovered.</p>
+        <div class="block">
+          <!-- File chooser -->
+          <p>Path(s) to original CPM.js.</p>
+          <div class="chooser" id="src">
+            <input type="file" accept=".js" multiple/>
+            <div class="chosen">
+              <!-- Currently chosen files -->
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <p>Where to save the output.</p>
+          <!-- Directory chooser -->
+          <div class="chooser" id="outdir">
+            <input type="file" webkitdirectory/>
+            <div class="chosen">
+              <!-- Currently chosen directory -->
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <p>Sample file to compare.</p>
+          <!-- File chooser -->
+          <div class="chooser" id="samplePath">
+            <input type="file" accept=".js" value="../resources/CPM-sample.js"/>
+            <div class="chosen">
+              <!-- Currently chosen file -->
+            </div>
+          </div>
+        </div>
+        <div class="block wrapper-logger">
+          <div>
+            <p>Log</p>
+            <button class="btn btn-default" id="clear">Clear</button>
+            <button class="btn btn-default" id="show">Show</button>
+            <button class="btn btn-default" id="hide">Hide</button>
+          </div>
+          <div class="logger">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-large" id="btn-xcpextract">Extract</button>
+          <span class="" id="progress"></span>
+          <span class="info" id="info"></span>
+        </div>
+      </section>
+
+      <!-- Help -->
+      <section id='help'>
+        <h2>Help</h2>
+      </section>
+
+      <!-- Scripts -->
+      <script src="./js/renderer.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>

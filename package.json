@@ -1,0 +1,31 @@
+{
+  "name": "cpexternalizer-gui",
+  "version": "0.1.0",
+  "description": "Electronized version of CPExternalizer",
+  "main": "index.js",
+  "scripts": {
+    "start:gui": "./node_modules/.bin/electron .",
+    "build:win": "electron-packager . --platform=win32 out=dist/"
+  },
+  "keywords": [
+    "electron",
+    "electron-packager",
+    "HTML5",
+    "Adobe Captivate",
+    "javascript",
+    "refractor"
+  ],
+  "bugs": {
+    "url": "https://github.com/perfectstrong/CPExternalizer/issues",
+    "email": "quoc_nhat_han.tran@utt.fr"
+  },
+  "author": {
+    "name": "TRAN Quoc Nhat Han",
+    "email": "quoc_nhat_han.tran@utt.fr"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perfectstrong/CPExternalizer-GUI.git"
+  }
+}

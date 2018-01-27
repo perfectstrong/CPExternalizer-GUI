@@ -1,0 +1,45 @@
+.block {
+    clear: both;
+    border: 0.05em solid black;
+    margin: 0 0 1em 0;
+    padding: 1em 0.5em;
+}
+
+.logger {
+    display: none;
+    overflow-y: auto;
+    height: 10em;
+}
+
+    .logger .log {
+        color: blue;
+    }
+
+    .logger .err {
+        color: red;
+    }
+
+    .logger * {
+        margin: 0 0 0.1em 0;
+    }
+
+.window-content {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin: 1% 5%;
+}
+
+#info {
+    display: none;
+}
+
+#progress {
+    display: none;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
