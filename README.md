@@ -15,6 +15,14 @@ npm install
 npm run start
 ````
 
+## Build
+You can build a version for your computer. It will be placed in `dist/` suffixed with your platform and architecture of CPU.
+````bash
+npm build
+````
+
+Details here [Electron packager](https://github.com/electron-userland/electron-packager).
+
 ## Graphical User Interface
 _Built with [Electron](https://github.com/electron/electron) and [Photon](https://github.com/connors/photon). Packaged by [electron-packager](https://github.com/electron/electron-packager)._
 
