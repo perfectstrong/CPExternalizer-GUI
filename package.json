@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
-    "build:win": "./node_modules/.bin/electron-packager ./ CPExternalizer --platform=win32 --overwrite --out=dist/"
+    "build:win": "./node_modules/.bin/electron-packager ./ CPExternalizer --platform=win32 --overwrite --out=dist/",
+    "build": "./node_modules/.bin/electron-packager ./ CPExternalizer --out=dist/"
   },
   "keywords": [
     "electron",
