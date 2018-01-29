@@ -13,23 +13,23 @@ console.error = function () {
     process.send(err + str);
 }
 const Promise = require('bluebird');
-let api = require(process.cwd() + '/api');
+let cpext = require('cpexternalizer');
 
 process.on('message', (msg) => {
     let args = msg.args,
         cmd = () => Promise.resolve();
     switch (msg.command) {
         case 'dirextract':
-            cmd = () => api.dirextract(args.src, args.outdir);
+            cmd = () => cpext.dirextract(args.src, args.outdir);
             break;
         case 'soundfix':
-            cmd = () => api.soundfix(args.src, args.ulpath);
+            cmd = () => cpext.soundfix(args.src, args.ulpath);
             break;
         case 'xcpextract':
-            cmd = () => api.xcpextract(args.src, args.outdir, args.samplePath);
+            cmd = () => cpext.xcpextract(args.src, args.outdir, args.samplePath);
             break;
         case 'extract':
-            cmd = () => api.extract(args.src, args.outdir);
+            cmd = () => cpext.extract(args.src, args.outdir);
             break;
         default:
             process.send('Unknown command');

@@ -267,7 +267,7 @@ class Section {
             this._showMessage('Running...');
             this.lock();
             this._logger.show();
-            let subprocess = cp.fork('./gui/js/subprocess', [], {
+            let subprocess = cp.fork('./js/subprocess', [], {
                 cwd: process.cwd(),
             });
             subprocess.send({
