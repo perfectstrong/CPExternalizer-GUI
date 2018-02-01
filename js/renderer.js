@@ -1,5 +1,6 @@
-let cp = require('child_process');
-let path = require('path');
+let { remote } = require('electron');
+let cp = remote.require('child_process');
+let path = remote.require('path');
 
 /**
  * Clear all child nodes
@@ -248,6 +249,7 @@ class Section {
         let button = this._dom.querySelector('button[id^="btn-"]');
         if (!button) throw new Error('Main button not found!');
         button.addEventListener('click', ev => {
+            this.lock();
             // Get the input
             let args = {};
             try {
@@ -265,7 +267,6 @@ class Section {
             // Launch api
             this._showProgress('running');
             this._showMessage('Running...');
-            this.lock();
             this._logger.show();
             let subprocess = cp.fork('./js/subprocess', [], {
                 cwd: process.cwd(),
@@ -345,6 +346,9 @@ class Section {
     }
 
     lock() {
+        // Disable launching button
+        this._dom.querySelectorAll('button[id|="btn"]').forEach(btn => btn.disabled = true);
+        // Disable choosers
         this._choosers.forEach(chooser =>
             chooser.querySelectorAll('*').forEach(ele => {
                 ele.disabled = true;
@@ -352,6 +356,10 @@ class Section {
     }
 
     unlock() {
+        console.log('Unlocking...');
+        // Enable launching button
+        this._dom.querySelectorAll('button[id|="btn"]').forEach(btn => btn.disabled = false);
+        // Enable choosers
         this._choosers.forEach(chooser =>
             chooser.querySelectorAll('*').forEach(ele => {
                 ele.disabled = false;

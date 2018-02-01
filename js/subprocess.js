@@ -32,7 +32,7 @@ process.on('message', (msg) => {
             cmd = () => cpext.extract(args.src, args.outdir);
             break;
         default:
-            process.send('Unknown command');
+            process.send(err + 'Unknown command');
             process.send(false);
             return ;
             break;

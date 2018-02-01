@@ -10,14 +10,13 @@ app.on('ready', () => {
         height: 600,
         title: 'Captivate Module Externalizer',
         acceptFirstMouse: true,
-        titleBarStyle : 'hidden',
     });
     window.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true
     }));
-    // window.webContents.openDevTools();
+    window.webContents.openDevTools();
     window.on('closed', () => {
         window = null;
     });
